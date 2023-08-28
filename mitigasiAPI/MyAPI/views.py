@@ -61,6 +61,7 @@ def preprocess(text, words):
 @permission_classes([AllowAny])
 def classification(request) :
     msg = request.query_params['msg']
+    lokasi = request.query_params['lokasi']
     msg = base64.b64decode(msg)
     
     #msg = "Banjir Bandang yang"
@@ -169,7 +170,7 @@ def classification(request) :
         else :
             classnya = "Damkar"
 
-        send_message_view(msg, classnya)
+        send_message_view(msg, classnya, lokasi)
         # send_message("hallo")
     return JsonResponse({"instansi": classnya})
 
