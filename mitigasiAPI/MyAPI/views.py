@@ -169,7 +169,7 @@ def classification(request) :
         else :
             classnya = "Damkar"
 
-        send_message_view(msg)
+        send_message_view(msg, classnya)
         # send_message("hallo")
     return JsonResponse({"instansi": classnya})
 
